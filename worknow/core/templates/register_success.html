@@ -1,0 +1,67 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	{% load staticfiles %}
+	<meta charset="utf-8">
+
+	<title>Registro - wornow</title>
+
+      <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap/css/bootstrap.css' %}">
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+	  <link rel='stylesheet prefetch' href='https://cdn.jsdelivr.net/foundation/5.5.0/css/foundation.css'>
+	  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css'>
+
+
+</head>
+<body>
+
+	<nav class="navbar navbar-inverse">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>                        
+	      </button>
+	      <a class="navbar-brand" href="/login">worknow</a>
+	    </div>
+	      <ul class="nav navbar-nav navbar-right">
+	        <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Ja sou cadastrado</a></li>
+	      </ul>	      
+	    
+
+	  </div>
+	</nav>
+
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-2"></div>
+ 	<div class="container">
+		<div class="row">
+
+			<div class="panel panel-primary">
+			  <div class="panel-heading"></div>
+			  <div class="panel-body">		
+				
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+					<h3>Cadastrado com sucesso!!!<br></h3>
+					<p><a href="/login">Entre na sua conta!!!</a></p>
+
+				</div>	
+			  </div>
+			  </div>
+			</div>
+		</div>
+			
+	</div>
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-2"></div>
+
+
+
+
+    <script language="javascript" src="{% static 'css/bootstrap/js/jquery-3.1.0.min.js' %}"></script>
+    <script language="javascript" src="{% static 'css/bootstrap/js/bootstrap.min.js' %}"></script>
+
+</body>
+</html>

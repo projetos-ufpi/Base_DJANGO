@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}{{ user.first_name}} {{user.last_name}} - worknow{% endblock %}
+
+{% block content %}
+
+	<br><br><br>
+
+ 	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-1"></div>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-10">
+
+				<div class="panel panel-primary">
+				  <strong><h2>Altere seus dados<br></h2></strong>
+				  <hr>
+				  <div class="panel-body">
+					<form method="post" class="form-horizontal" >
+						{% csrf_token %}
+			
+						{{ form.as_p}}
+						<br>
+						<button type="submit" class="btn btn-primary active">Alterar</button>
+						<a  href="/profile"><button type="button" class="btn btn-primary disabled">Cancelar</button></a>
+
+
+
+					</form>
+				  </div>
+				</div>
+		</div>
+
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-1"></div>
+		</div>
+	</div>
+
+{% endblock %}

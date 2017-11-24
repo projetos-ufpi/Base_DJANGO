@@ -1,0 +1,66 @@
+{% extends 'base_login.html' %}
+{% load staticfiles %}
+
+{% block title %}worknow{% endblock %}
+
+{% block head %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+{% block content %}
+
+
+
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-9">
+				<div class="panel panel-primary">
+					  <div class="panel-heading"></div>
+					  <div class="panel-body">			
+
+						<div class="jumbotron" id="comp-esq">
+
+							<div style="padding-left: 10%">
+							  <h1>worknow</h1>
+							  <p>
+							  worknow é uma plataforma desenvolvida pensando nos freelancers
+							  </p>
+							  <p>
+							  	Questione e interaja conosco!
+							  </p>
+							  <p><a class="btn btn-primary btn-lg" href="/register" role="button">Crie uma conta</a></p>					
+
+							</div>
+						  				 
+						</div>
+					  </div>
+				</div>
+			</div>
+
+
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+					<div class="conteudo_login">
+						<h3><strong>Acesse sua conta:</strong></h3>
+						
+														
+							<form action="/auth/" method="post">{% csrf_token %}				
+									<div>
+										<br>
+										<input name="username" type="username" placeholder="Usuário" class="tam_login">
+									</div>
+
+									<div>
+										<br>
+										<input name="password" type="password" placeholder="Senha" class="tam_login">
+									</div>
+									<br>
+									<button name="login" type="submit" class="btn btn-primary btn-block btn-lg">Entrar</button><br>
+									<button type="button" class="btn btn-link"><a href="/reset-password">Esqueci minha senha</a>
+									</button>
+									
+							</form>	
+
+					</div>			  	
+
+			</div>
+
+{% endblock %}

@@ -1,0 +1,44 @@
+.tam_login {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;    
+    border: 1px solid #f0f0f0;
+    border-radius: 1px;
+    border: none;
+    background-color: #f0f0f0;
+    font-weight: bold;
+ }
+
+#titulo_login{
+    color: black;
+    text-align: center;
+    font-size: 100%;
+}
+
+.conteudo_login {
+    padding-left: 0%;
+    padding-top: 5%;
+    padding-right: 0%;
+    padding-bottom: 5%;
+    
+        
+}
+
+
+.botao_login {
+    border:none;
+    display:inline-block;
+    outline:0;
+    padding:10px 24px;
+    overflow:hidden;
+    text-decoration:none;
+    color: #f0f0f0;
+    background-color:black;
+    cursor:pointer;
+    align-self: left;
+}
+
+.botao_login:hover {
+    box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    
+}

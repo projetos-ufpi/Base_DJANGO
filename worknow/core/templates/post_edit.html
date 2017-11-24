@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}{{ user.first_name}} {{user.last_name}} - worknow{% endblock %}
+
+
+
+{% block content %}
+
+	<br><br>
+	<br>
+
+ 	<div class="container">
+		
+	 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2"></div>
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+
+			<div class="panel panel-primary">
+			  <h3>Publicação<br></h3>
+			  <hr>
+			  <div class="panel-body">
+				<form method="post" class="form-horizontal" >
+					{% csrf_token %}
+		
+					{{ form.as_p}}
+					<br>
+					<button type="submit" class="btn btn-primary active">{{args}}</button>
+					<a href="/home/"><button type="button" class="btn btn-primary disabled">Cancelar</button></a>
+		           	<a href="/post/{{pk}}/remove/" style="float:right"><button type="button" class="btn btn-danger" >Apagar</button></a> 
+
+				</form>
+			  </div>
+			</div>
+		</div>
+
+	 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2"></div>	
+			
+		
+	</div>
+
+{% endblock %}

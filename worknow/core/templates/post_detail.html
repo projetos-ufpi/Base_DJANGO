@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block title %}Editar Publicação - worknow{% endblock %}
+
+
+{% block head %}
+<style type="text/css">
+
+	.comment {
+	    margin: 20px 0px 20px 20px;
+	}	
+
+
+</style>
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="col-xs-12 col-sm-10 col-md-12 col-lg-6">	
+				<br><br><br>
+
+				
+				<div class="panel panel-primary">
+			    	
+
+			    	<h5>
+			    		<img class="img-responsive, img-circle" src="{{post.author.userprofile.image.url}}" width="35" height="35">
+			    		{{post.author.first_name}} {{post.author.last_name}}
+
+
+			    	</h5>
+
+			    
+
+			      	<hr>
+					<h3><a href="/post/{{post.pk}}/">{{ post.title }}</a><br></label></h3>
+					<br>
+					<div class="info-content">      
+						<p>{{ post.text|linebreaksbr }}</p>
+						<a href="/post/{{post.pk}}/">Comentários: {{ post.comments.count }}</a>
+					</div>
+
+					<hr>
+
+
+					{% for comment in post.comments.all %}
+					    {% if user.is_authenticated or comment.approved_comment %}
+					    <div class="comment">
+					        <div class="date">
+					        {% if user.pk == post.author.pk %}
+					            {% if not comment.approved_comment %}
+					                <a class="btn btn-default" href="/comment/{{comment.pk}}/remove/"><span class="glyphicon glyphicon-remove"></span></a>
+					                <a class="btn btn-default" href="/comment/{{comment.pk}}/approve/"><span class="glyphicon glyphicon-ok"></span></a>
+					            {% endif %}
+					        {% endif %}
+					        </div>
+
+					        			    	<h5>
+				    	<img class="img-responsive, img-circle" src="{{comment.author.userprofile.image.url}}" width="23" height="23">
+				    	{{comment.author.first_name}} {{comment.author.last_name}}
+				    	</h5>
+
+
+					        <p>{{ comment.text|linebreaks }}</p>
+					    </div>
+					    {% endif %}
+					{% empty %}
+						<br>
+						<div class="comment">
+					    <p>Ainda não há comentários :(</p>
+					    </div>
+					{% endfor %}
+
+					<div class="comment">
+						<form method="post" class="form-horizontal" >
+							{% csrf_token %}
+				
+							{{ form.as_p}}
+							<br>
+							<button type="submit" class="btn btn-primary active" style="float:right">Comentar</button>
+
+						</form>
+
+					</div>
+
+			    </div>
+			    
+		</div>
+ </div> 
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-3"></div>
+
+{% endblock %}
+
+
+
